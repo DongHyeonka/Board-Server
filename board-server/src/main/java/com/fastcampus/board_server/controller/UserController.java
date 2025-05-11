@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fastcampus.board_server.aop.LoginCheck;
 import com.fastcampus.board_server.dto.UserDto;
 import com.fastcampus.board_server.dto.request.UserDeleteId;
 import com.fastcampus.board_server.dto.request.UserLoginRequest;
@@ -89,11 +90,12 @@ public class UserController {
     }
 
     @PatchMapping("password")
-    public ResponseEntity<LoginResponse> updateUserPassword(
+    @LoginCheck(type = LoginCheck.UserType.USER)
+    public ResponseEntity<LoginResponse> updateUserPassword(String accountId,
             @RequestBody UserUpdatePasswordRequest userUpdatePasswordRequest,
             HttpSession session) {
         ResponseEntity<LoginResponse> responseEntity = null;
-        String Id = SessionUtil.getLoginMemberId(session);
+        String Id = accountId;
         String beforePassword = userUpdatePasswordRequest.beforePassword();
         String afterPassword = userUpdatePasswordRequest.afterPassword();
 
