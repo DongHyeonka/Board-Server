@@ -61,7 +61,7 @@ public class UserServiceImpl implements UserService {
 
         if (memberInfo != null) {
             memberInfo.setPassword(SHA256Util.encryptSHA256(newPassword));
-            int insertCount = userMapper.updatePassword(memberInfo);
+            userMapper.updatePassword(memberInfo);
         } else {
             log.error("updatePasswrod ERROR! {}", memberInfo);
             throw new IllegalArgumentException(

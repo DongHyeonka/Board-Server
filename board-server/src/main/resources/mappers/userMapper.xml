@@ -4,7 +4,7 @@
 <mapper namespace="com.fastcampus.board_server.mapper.UserMapper">
 
     <select id="getUserProfile" resultType="com.fastcampus.board_server.dto.UserDto">
-        SELECT userId, userId, password, nickName, createTime, isWithDraw, status
+        SELECT id, userId, userId, password, nickName, createTime, isWithDraw, status
         FROM user
         WHERE userId = #{userId}
     </select>
