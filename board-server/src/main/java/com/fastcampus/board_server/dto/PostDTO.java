@@ -1,6 +1,7 @@
 package com.fastcampus.board_server.dto;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,4 +27,5 @@ public class PostDTO {
     private int userId;
     private int fileId;
     private Date updateTime;
+    private List<TagDTO> tagDTOList;
 }

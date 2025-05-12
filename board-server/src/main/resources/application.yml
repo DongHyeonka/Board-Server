@@ -24,4 +24,3 @@ mybatis:
 
 expire:
   defaultTime: 36288000
-  

@@ -8,15 +8,14 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Builder
-@ToString
 @Getter
 @Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryDTO {
+public class TagDTO {
     private int id;
     private String name;
-    private SortStatus sortStatus;
-    private int searchCount;
-    private int pagingStartOffset;
+    private String url;
+    private int postId;
 }
