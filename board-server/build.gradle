@@ -24,6 +24,8 @@ repositories {
 }
 
 dependencies {
+	//Redis
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 	//Lombok
 	implementation 'org.projectlombok:lombok:1.18.36'
 	annotationProcessor 'org.projectlombok:lombok:1.18.36'
