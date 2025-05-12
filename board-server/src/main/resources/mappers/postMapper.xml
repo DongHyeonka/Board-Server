@@ -6,6 +6,9 @@
 <mapper namespace="com.fastcampus.board_server.mapper.PostMapper">
 
     <insert id="register" parameterType="com.fastcampus.board_server.dto.PostDTO">
+        <selectKey resultType="int" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
         INSERT INTO post (name, isAdmin, contents, createTime, views, categoryId, userId, fileId, updateTime )
         VALUES (#{name}, #{isAdmin}, #{contents}, #{createTime}, #{views}, #{categoryId}, #{userId}, #{fileId}, #{updateTime})
     </insert>

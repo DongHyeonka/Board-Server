@@ -7,4 +7,6 @@ import com.fastcampus.board_server.dto.request.PostSearchRequest;
 
 public interface PostSearchService {
     List<PostDTO> getProducts(PostSearchRequest postSearchRequest);
+
+    List<PostDTO> getPostByTag(String tagName);
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fastcampus.board_server.aop.LoginCheck;
 import com.fastcampus.board_server.dto.CategoryDTO;
+import com.fastcampus.board_server.dto.SortStatus;
 import com.fastcampus.board_server.service.CategoryService;
 
 import lombok.Getter;
@@ -41,7 +42,7 @@ public class CategoryController {
         @PathVariable(name = "categoryId") int categoryId,
         @RequestBody CategoryRequest categoryRequest
     ) {
-        CategoryDTO categoryDTO = new CategoryDTO(categoryId, categoryRequest.getName(), CategoryDTO.SortStatus.NEWEST, 10, 1);
+        CategoryDTO categoryDTO = new CategoryDTO(categoryId, categoryRequest.getName(), SortStatus.NEWEST, 10, 1);
         categoryService.update(categoryDTO);
     }
 
